@@ -24,7 +24,7 @@ export class App {
 
   public listen(port: number, host: string) {
     this.app.listen(port, host, () => {
-      logger.info(`Server listening on http://${host}:${port}`)
+      logger.info(`Server listening on http://${host}:${port}`);
     });
   }
 

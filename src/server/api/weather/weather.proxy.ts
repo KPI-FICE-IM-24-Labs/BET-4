@@ -26,7 +26,7 @@ export const weatherProxy = async (city: string): Promise<WeatherData> => {
     throw new Error(`OpenWeatherMap API error: ${response.statusText}`);
   }
 
-  const data: Root = await response.json() as Root;
+  const data: Root = (await response.json()) as Root;
 
   return {
     city: data.name,
@@ -34,4 +34,4 @@ export const weatherProxy = async (city: string): Promise<WeatherData> => {
     humidity: data.main.humidity,
     wind: data.wind.speed,
   };
-}
+};
