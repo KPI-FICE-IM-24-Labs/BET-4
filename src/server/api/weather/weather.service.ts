@@ -8,14 +8,14 @@ export class WeatherService {
 
     try {
       const weatherData = await weatherProxy(city);
-      return void res.json(weatherData);
+      return void res.render('weather.hbs', weatherData);
     } catch (e) {
       const error = e as Error;
       logger.error(error.message);
       if (error.message === 'City not found') {
-        return void res.status(404).json({ error: error.message });
+        return void res.status(404).render('error.hbs', { message: error.message });
       }
-      res.status(500).json({ error: error.message });
+      res.status(500).render('error.hbs', { message: error.message });
     }
   }
 }

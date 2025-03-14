@@ -4,6 +4,7 @@ import cors from 'cors';
 import { logger } from '../logger';
 import { appRouter } from './api';
 import { weatherRouter } from './api/weather';
+import path from 'node:path';
 
 export class App {
   private readonly app: Express;
@@ -31,6 +32,7 @@ export class App {
     this.app.use(express.json());
     this.app.use(helmet());
     this.app.use(cors());
+    this.app.set('view engine', 'hbs');
 
     logger.info('Middleware set up successfully');
   }
