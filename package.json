@@ -17,17 +17,24 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "start": "tsx index.ts",
-    "start:dev": "tsx watch index.ts",
+    "start": "tsx src/index.ts",
+    "start:dev": "tsx watch src/index.ts",
     "start:prod": "node dist/index.ts",
     "fmt": "prettier --write .",
     "test": "jest"
   },
   "devDependencies": {
+    "@types/cors": "^2",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
   }
 }
