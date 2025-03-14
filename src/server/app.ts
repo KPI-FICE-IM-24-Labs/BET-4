@@ -33,6 +33,7 @@ export class App {
     this.app.use(helmet());
     this.app.use(cors());
     this.app.set('view engine', 'hbs');
+    this.app.use(express.static(path.resolve('public')));
 
     logger.info('Middleware set up successfully');
   }
