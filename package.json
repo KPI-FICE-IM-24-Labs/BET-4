@@ -1,0 +1,33 @@
+{
+  "name": "bet-4",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "homepage": "https://github.com/KPI-FICE-IM-24-Labs/BET-4#readme",
+  "bugs": {
+    "url": "https://github.com/KPI-FICE-IM-24-Labs/BET-4/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KPI-FICE-IM-24-Labs/BET-4.git"
+  },
+  "license": "MIT",
+  "author": "Kiril Yakymchuk <stbestich@gmail.com>",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "start": "tsx index.ts",
+    "start:dev": "tsx watch index.ts",
+    "start:prod": "node dist/index.ts",
+    "fmt": "prettier --write .",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
