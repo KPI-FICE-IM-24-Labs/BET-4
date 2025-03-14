@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { logger } from '../logger';
 import { appRouter } from './api';
+import { weatherRouter } from './api/weather';
 
 export class App {
   private readonly app: Express;
@@ -36,6 +37,7 @@ export class App {
 
   private setupRoutes() {
     this.app.use(appRouter);
+    this.app.use(weatherRouter);
     logger.info('Routes set up successfully');
   }
 }
