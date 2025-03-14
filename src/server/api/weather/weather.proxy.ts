@@ -9,9 +9,13 @@ export interface WeatherData {
   wind: number;
 }
 
-export const weatherProxy = async (city?: string): Promise<WeatherData> => {
+export const weatherProxy = async (city: string): Promise<WeatherData> => {
+  if (!city) {
+    throw new Error(`No city specified`);
+  }
+
   const apiKey = process.env.OPENWEATHERMAP_API_KEY;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city || 'Izmail')}&appid=${apiKey}&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
 
   const response = await fetch(apiUrl);
 

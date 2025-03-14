@@ -5,6 +5,6 @@ import { logger } from '../../../logger';
 export const weatherRouter = express.Router();
 const weatherService = new WeatherService();
 
-weatherRouter.get('/weather', weatherService.getWeatherByCity);
 weatherRouter.get('/weather/:city', weatherService.getWeatherByCity);
+weatherRouter.get('/weather', weatherService.getWeatherByCity);
 logger.info('Weather router initialized');
